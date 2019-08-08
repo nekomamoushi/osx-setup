@@ -26,6 +26,16 @@ log () {
     printf "%s\n" "$1"
 }
 
+log_header () {
+    printf "• %b%s%b\n" "${WHITE}" "$1" "${RESET}"
+    log ""
+}
+
+log_arrow () {
+    printf "  %b%s %b%s%b\n" "${BLUE}" "${ARROW_SYMBOL}" "${italic}" "$1" "${RESET}"
+    log ""
+}
+
 log_question () {
     printf "    [ %b%s%b ] %s : " "${CYAN}" "${QUESTION_SYMBOL}" "${RESET}" "$1"
 }
@@ -49,6 +59,20 @@ log_exit () {
     else
         printf "\n\n%b%s%b\n\n" "${RED}" "↳ EXIT: $2" "${reset}"
         exit 1
+    fi
+}
+
+get_os () {
+    OS_TYPE=$(uname -s)
+    printf "%s" "${OS_TYPE}"
+}
+
+verify_os () {
+    OS_TYPE=$(get_os)
+    if [ "${OS_TYPE}" == "$1" ] ; then
+        return 0
+    else
+        return 1
     fi
 }
 
