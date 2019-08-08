@@ -26,3 +26,6 @@ if ! answer_for_confirmation ; then
     log_exit "1" "Read the entire script before re-launch the script"
 fi
 log ""
+
+log_header "OSX Software"
+bash ./scripts/osx-software.sh

@@ -31,6 +31,10 @@ log_header () {
     log ""
 }
 
+log_info () {
+    printf "\r    [ %b%s%b ] %s\n" "${WHITE}" "${INFO_SYMBOL}" "${RESET}" "$1"
+}
+
 log_arrow () {
     printf "  %b%s %b%s%b\n" "${BLUE}" "${ARROW_SYMBOL}" "${italic}" "$1" "${RESET}"
     log ""
