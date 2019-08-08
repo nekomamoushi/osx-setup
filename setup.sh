@@ -12,8 +12,17 @@ log "#         AND EDIT TO SUIT YOUR NEEDS         #" $red
 log "###############################################" $red
 log ""
 
-log ""
-ask_for_confirmation "Have you read through the script you're about to run and understood that it will make changes to your computer ?"
-if ! answer_for_confirmation ; then
-    log_exit "1" "Read the entire script before re-laucnh the script"
+log_header "Intro"
+
+if ! verify_os "Darwin": then
+    log_exit "1" "You are not on OSX"
 fi
+ask_for_confirmation "Have you read through the script you're about to run ?"
+if ! answer_for_confirmation ; then
+    log_exit "1" "Read the entire script before re-launch the script"
+fi
+ask_for_confirmation "Did you understand that it will make changes to your computer ?"
+if ! answer_for_confirmation ; then
+    log_exit "1" "Read the entire script before re-launch the script"
+fi
+log ""
