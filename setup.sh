@@ -14,7 +14,7 @@ log ""
 
 log_header "Intro"
 
-if ! verify_os "Darwin": then
+if ! verify_os "Darwin"; then
     log_exit "1" "You are not on OSX"
 fi
 ask_for_confirmation "Have you read through the script you're about to run ?"
