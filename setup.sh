@@ -35,3 +35,6 @@ bash ./scripts/osx-xcode.sh
 
 log_header "OSX Homebrew"
 bash ./scripts/osx-homebrew.sh
+
+log_header "OSX Preferences"
+bash ./scripts/osx-defaults-system.sh
