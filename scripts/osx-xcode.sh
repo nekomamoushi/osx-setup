@@ -32,6 +32,7 @@ xcode_set_developer_directory () {
 }
 
 main () {
+    log_arrow "Install Xcode and Command Line Tools"
     xcode_install
     xcode_install_cli
     xcode_accept_license

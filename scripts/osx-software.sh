@@ -29,7 +29,7 @@ osx_install_update () {
 }
 
 main () {
-    log_arrow "Installation OSX update"
+    log_arrow "Install OSX update"
     osx_install_update
 }
 
