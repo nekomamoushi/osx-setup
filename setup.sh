@@ -29,3 +29,6 @@ log ""
 
 log_header "OSX Software"
 bash ./scripts/osx-software.sh
+
+log_header "OSX Xcode"
+bash ./scripts/osx-xcode.sh
