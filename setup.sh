@@ -32,3 +32,6 @@ bash ./scripts/osx-software.sh
 
 log_header "OSX Xcode"
 bash ./scripts/osx-xcode.sh
+
+log_header "OSX Homebrew"
+bash ./scripts/osx-homebrew.sh
