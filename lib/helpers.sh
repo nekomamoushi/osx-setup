@@ -44,6 +44,10 @@ log_question () {
     printf "    [ %b%s%b ] %s : " "${CYAN}" "${QUESTION_SYMBOL}" "${RESET}" "$1"
 }
 
+log_wait () {
+    printf "\r    [ %s ] %s" " " "$1"
+}
+
 log_success () {
     printf "\r    [ %b%s%b ] %s\n" "${GREEN}" "${SUCCESS_SYMBOL}" "${RESET}" "$1"
 }
@@ -54,6 +58,14 @@ log_warn () {
 
 log_error () {
     printf "\r    [ %b%s%b ] %s\n" "${RED}" "${ERROR_SYMBOL}" "${RESET}" "$1"
+}
+
+log_result () {
+    if [ "$1" = "0" ] ; then
+        log_success "$2"
+    else
+        log_error "$2"
+    fi
 }
 
 log_exit () {
@@ -112,4 +124,67 @@ restart () {
         return 0
     fi
     sudo shutdown -r now &> /dev/null
+}
+
+execute () {
+    command="$1"
+    message="${2:-$1}"
+    tmp_file="$(mktemp /tmp/XXXXX)"
+    echo $command
+    exit_code=0
+    pid_command=""
+
+    log_wait "${message}"
+    # Execute commands in background
+    eval "${command}" &> /dev/null 2> "${tmp_file}" &
+    pid_command=$!
+
+    # Wait for the commands to no longer be executing
+    # in the background, and then get their exit code.
+    wait "${pid_command}" &> /dev/null
+    exit_code=$?
+
+    # Print output based on what happened.
+    log_result "${exit_code}" "$MSG"
+
+    if [ ${exit_code} -ne 0 ]; then
+        log_error_stream < "${tmp_file}"
+    fi
+
+    rm -rf "${tmp_file}}"
+
+    return ${exit_code}
+}
+
+brew_tap () {
+    local command="brew tap $1"
+    execute "${command}"
+}
+
+brew_install () {
+    local command="brew install $1"
+
+    if brew list "$1" &> /dev/null ; then
+        log_warn "$1 is already installed"
+        return 0
+    fi
+
+    execute "${command}"
+}
+
+cask_install () {
+    local command=
+
+    if brew cask list "$1" &> /dev/null ; then
+        log_warn "$1 is already installed"
+        return 0
+    fi
+
+    if [ ! -z "$2" ]; then
+        command="brew cask install --appdir=\"$2\" $1"
+    else
+        command="brew cask install $1"
+    fi
+
+    execute "${command}"
 }
