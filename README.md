@@ -2,16 +2,13 @@
 
 ## Features
 
-* [osx-software](scripts/osx-software.sh)
-    * OSX Update (if necessary)
-* [osx-xcode](scripts/osx-xcode.sh)
-    * Xcode Command Line Tools Installation
-* [osx-homebrew](scripts/osx-homebrew.sh)
-    * Homebrew Installation (with tools and apps)
-* [osx-defaults-system](scripts/osx-defaults-system.sh)
-    * Sets OSX Preferences System
-* [osx-defaults-apps](scripts/osx-defaults-apps.sh)
-    * Sets OSX Preferences Apps
+* **OSX Update (if necessary)**
+* **Xcode Command Line Tools Installation**
+* **Package Manager: Homebrew**
+* **Install Developer Tools**
+* **Install Developer Apps**
+* **Sets OSX Preferences System**
+* **Sets OSX Preferences Apps**
 
 ## Installation
 
