@@ -4,7 +4,14 @@
 
 * [osx-software](scripts/osx-software.sh)
     * OSX Update (if necessary)
-
+* [osx-xcode](scripts/osx-xcode.sh)
+    * Xcode Command Line Tools Installation
+* [osx-homebrew](scripts/osx-homebrew.sh)
+    * Homebrew Installation (with tools and apps)
+* [osx-defaults-system](scripts/osx-defaults-system)
+    * Sets OSX Preferences System
+* [osx-defaults-apps](scripts/osx-defaults-apps)
+    * Sets OSX Preferences Apps
 
 ## Installation
 
