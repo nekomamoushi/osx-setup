@@ -12,7 +12,7 @@ xcode_install() {
 xcode_install_cli () {
     xcode-select --install &> /dev/null
     log_exit "$?" "Install Xcode Command Line Tools"
-
+}
 
 xcode_accept_license () {
     # Automatically agree to the terms of the `Xcode` license.
