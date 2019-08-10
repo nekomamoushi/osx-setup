@@ -78,7 +78,8 @@ install_applications () {
     cask_install "transmission"
     cask_install "vscodium"
 
-    mas_install "1284863847" Unsplash Wallpapers
+    mas_install "1284863847" # Unsplash Wallpapers
+    mas_install "1287445660" # Agenda.
 
     log_empty_line
 }
