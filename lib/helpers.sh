@@ -26,6 +26,10 @@ log () {
     printf "%s\n" "$1"
 }
 
+log_empty_line () {
+    printf "\n"
+}
+
 log_header () {
     printf "• %b%s%b\n" "${WHITE}" "$1" "${RESET}"
     log ""
@@ -60,6 +64,12 @@ log_error () {
     printf "\r    [ %b%s%b ] %s\n" "${RED}" "${ERROR_SYMBOL}" "${RESET}" "$1"
 }
 
+log_error_stream() {
+    while read -r line; do
+        print_error "↳ ERROR: $line"
+    done
+}
+
 log_result () {
     if [ "$1" = "0" ] ; then
         log_success "$2"
@@ -90,6 +100,10 @@ verify_os () {
     else
         return 1
     fi
+}
+
+has () {
+    command -v "$1" &> /dev/null
 }
 
 ask_for_confirmation () {
@@ -130,7 +144,6 @@ execute () {
     command="$1"
     message="${2:-$1}"
     tmp_file="$(mktemp /tmp/XXXXX)"
-    echo $command
     exit_code=0
     pid_command=""
 
