@@ -61,6 +61,7 @@ install_applications () {
     cask_install "iina"
     cask_install "firefox"
     cask_install "font-fira-code"
+    cask_install "font-hack-nerd-font"
     cask_install "font-iosevka"
     cask_install "iterm2"
     cask_install "macdown"
