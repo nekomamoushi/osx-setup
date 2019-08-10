@@ -40,3 +40,5 @@ log_header "OSX Preferences"
 bash ./scripts/osx-defaults-system.sh
 bash ./scripts/osx-defaults-apps.sh
 
+log_header "OSX Local"
+bash ./scripts/osx-local.sh
