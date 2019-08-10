@@ -12,6 +12,7 @@ install_homebrew () {
         log_exit $? "Homebrew"
     else
         log_warn "Homebrew already installed"
+        log_empty_line
         return 0
     fi
 }
@@ -23,6 +24,7 @@ install_taps () {
     brew_tap "homebrew/cask-versions"
     brew_tap "homebrew/core"
     brew_tap "sambadevi/powerlevel9k"
+    log_empty_line
 }
 
 install_packages () {
@@ -35,20 +37,16 @@ install_packages () {
     brew_install "git-standup"
     brew_install "htop"
     brew_install "nvm"
-    brew_install "pipenv"
     brew_install "python"
     brew_install "python@2"
+    brew_install "pipenv"
     brew_install "pyenv"
-    brew_install "qlcolorcode"
-    brew_install "qlmarkdown"
-    brew_install "quicklook-json"
-    brew_install "quicklook-csv"
-    brew_install "qlstephen"
     brew_install "the_silver_searcher"
     brew_install "tldr"
     brew_install "wget"
     brew_install "zsh"
     brew_install "zplug"
+    log_empty_line
 }
 
 install_applications () {
@@ -67,11 +65,17 @@ install_applications () {
     cask_install "iterm2"
     cask_install "macdown"
     cask_install "numi"
+    cask_install "qlcolorcode"
+    cask_install "qlmarkdown"
+    cask_install "quicklook-json"
+    cask_install "quicklook-csv"
+    cask_install "qlstephen"
     cask_install "sublime-merge"
     cask_install "sublime-text"
     cask_install "the-unarchiver"
     cask_install "transmission"
     cask_install "vscodium"
+    log_empty_line
 }
 
 main () {
@@ -88,4 +92,5 @@ main () {
     install_applications
 }
 
+ask_for_sudo
 main
