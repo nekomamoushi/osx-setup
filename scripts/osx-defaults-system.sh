@@ -206,7 +206,9 @@ main () {
     set_dashboard_prefs
     set_app_store_prefs
     restart_apps
+    log_empty_line
 }
 
+ask_for_sudo
 main
 

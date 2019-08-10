@@ -31,6 +31,7 @@ osx_install_update () {
 main () {
     log_arrow "Install OSX update"
     osx_install_update
+    log_empty_line
 }
 
 main

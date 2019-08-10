@@ -45,6 +45,8 @@ main () {
 
     set_transmission_prefs
     restart_apps
+    log_empty_line
 }
 
+ask_for_sudo
 main
