@@ -50,16 +50,16 @@ install_packages () {
 }
 
 install_applications () {
-    cask_install "1password" "/Applications"
+    cask_install "1password" "--appdir=/Applications --no-quarantine"
     cask_install "adoptopenjdk8"
     cask_install "android-studio"
     cask_install "android-platform-tools"
     cask_install "android-sdk"
     cask_install "boostnote"
-    cask_install "dropbox" "/Applications"
+    cask_install "dropbox" "--appdir=/Applications"
     cask_install "evernote"
     cask_install "iina"
-    cask_install "firefox"
+    cask_install "firefox" "--appdir=/Applications"
     cask_install "font-fira-code"
     cask_install "font-hack-nerd-font"
     cask_install "font-iosevka"
