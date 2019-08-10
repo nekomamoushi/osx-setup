@@ -186,17 +186,17 @@ brew_install () {
 }
 
 cask_install () {
-    local command=
+    local command=""
+    local options="$2"
 
     if brew cask list "$1" &> /dev/null ; then
         log_warn "$1 is already installed"
         return 0
     fi
 
-    if [ ! -z "$2" ]; then
-        command="brew cask install --appdir=\"$2\" $1"
-    else
-        command="brew cask install $1"
+    command="brew cask install $1"
+    if [ ! -z "${options}" ]; then
+        command="brew cask install $2 $1"
     fi
 
     execute "${command}"
