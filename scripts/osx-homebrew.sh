@@ -36,6 +36,7 @@ install_packages () {
     brew_install "git"
     brew_install "git-standup"
     brew_install "htop"
+    brew_install "mas"
     brew_install "nvm"
     brew_install "python"
     brew_install "python@2"
@@ -76,6 +77,9 @@ install_applications () {
     cask_install "the-unarchiver"
     cask_install "transmission"
     cask_install "vscodium"
+
+    mas_install "1284863847" Unsplash Wallpapers
+
     log_empty_line
 }
 

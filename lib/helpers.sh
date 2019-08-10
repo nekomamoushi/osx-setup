@@ -201,3 +201,14 @@ cask_install () {
 
     execute "${command}"
 }
+
+mas_install () {
+    local command="mas install $1"
+
+    if mas list | grep "$1" &> /dev/null ; then
+        log_warn "$1 is already installed"
+        return 0
+    fi
+
+    execute "${command}"
+}
