@@ -28,9 +28,26 @@ osx_install_update () {
     fi
 }
 
+# Set Defaults for Sleep
+osx_set_no_sleep () {
+    sudo pmset -a sleep 0
+    sudo pmset -a disksleep 0
+}
+
+# Set Hostname from DNS
+osx_set_hostname () {
+    local MY_NAME="$1"
+    sudo scutil --set ComputerName "$MY_NAME"
+    sudo scutil --set HostName "$MY_NAME"
+    sudo scutil --set LocalHostName "$MY_NAME"
+}
+
 main () {
     log_arrow "Install OSX update"
+    ask_for_sudo
     osx_install_update
+    osx_set_no_sleep
+    osx_set_hostname
     log_empty_line
 }
 
