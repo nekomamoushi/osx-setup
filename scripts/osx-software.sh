@@ -37,9 +37,10 @@ osx_set_no_sleep () {
 # Set Hostname from DNS
 osx_set_hostname () {
     local MY_NAME="$1"
-    sudo scutil --set ComputerName "$MY_NAME"
-    sudo scutil --set HostName "$MY_NAME"
-    sudo scutil --set LocalHostName "$MY_NAME"
+    sudo scutil --set ComputerName "${MY_NAME}"
+    sudo scutil --set HostName "${MY_NAME}"
+    sudo scutil --set LocalHostName "{$MY_NAME}"
+    sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string "{$MY_NAME}"
 }
 
 main () {
