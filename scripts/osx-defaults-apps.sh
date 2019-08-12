@@ -11,7 +11,7 @@ set_transmission_prefs () {
 
     # Use `~/Downloads/torrents` to store completed downloads
     defaults write org.m0k.transmission DownloadLocationConstant -bool true
-    defaults write org.m0k.transmission DownloadFolder -string "${HOME}/Downloads/Torrents"
+    defaults write org.m0k.transmission DownloadFolder -string "${HOME}/Movies"
 
     # Don’t prompt for confirmation before downloading
     defaults write org.m0k.transmission DownloadAsk -bool false
