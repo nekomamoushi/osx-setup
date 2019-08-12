@@ -127,6 +127,9 @@ set_dock_prefs() {
     # Don’t animate opening applications from the Dock
     defaults write com.apple.dock launchanim -bool false
 
+    # Create recent items stack
+    defaults write com.apple.dock persistent-others -array-add '{"tile-data" = {"list-type" = 1;}; "tile-type" = "recents-tile";}'
+
     ## Set hotcorner actions.  Disable "Disable Screen Saver" when found.
     ## The following are the values of each option in the GUI
     # None = 1
