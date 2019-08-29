@@ -41,6 +41,7 @@ install_packages () {
     brew_install "python"
     brew_install "python@2"
     brew_install "pipenv"
+    brew_install "powerlevel9k"
     brew_install "pyenv"
     brew_install "the_silver_searcher"
     brew_install "tldr"
