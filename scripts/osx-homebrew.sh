@@ -57,7 +57,7 @@ install_applications () {
     cask_install "android-studio"
     cask_install "android-platform-tools"
     cask_install "android-sdk"
-    cask_install "boostnote"
+    cask_install "lepton"
     cask_install "dropbox" "--appdir=/Applications"
     cask_install "evernote"
     cask_install "iina"
