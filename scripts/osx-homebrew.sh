@@ -89,6 +89,7 @@ install_applications () {
     mas_install "1284863847" # Unsplash Wallpapers
     mas_install "1287445660" # Agenda.
     mas_install "442160987" # FlyCut
+    mas_install "441258766" # Magnet
 
     log_empty_line
 }
