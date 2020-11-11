@@ -189,7 +189,7 @@ cask_install () {
     local command=""
     local options="$2"
 
-    if brew cask list "$1" &> /dev/null ; then
+    if brew list --cask "$1" &> /dev/null ; then
         log_warn "$1 is already installed"
         return 0
     fi
