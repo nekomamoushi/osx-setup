@@ -39,8 +39,7 @@ install_packages () {
     brew_install "htop"
     brew_install "mas"
     brew_install "nvm"
-    brew_install "python"
-    brew_install "python@2"
+    brew_install "python@3"
     brew_install "pipenv"
     brew_install "pyenv"
     brew_install "the_silver_searcher"
@@ -57,21 +56,18 @@ install_applications () {
     cask_install "android-studio"
     cask_install "android-platform-tools"
     cask_install "android-sdk"
-    cask_install "anybar"
     cask_install "appcleaner"
     cask_install "docker"
     cask_install "dropbox" "--appdir=/Applications"
     cask_install "evernote"
     cask_install "firefox" "--appdir=/Applications"
-    cask_install "font-fira-code"
     cask_install "font-hack-nerd-font"
     cask_install "font-iosevka"
     cask_install "iina"
     cask_install "iterm2"
     cask_install "google-chrome" "--appdir=/Applications"
     cask_install "lepton"
-    cask_install "macdown"
-    cask_install "netnewswire"
+    cask_install "mark-text"
     cask_install "numi"
     cask_install "postman"
     cask_install "qlcolorcode"
@@ -84,12 +80,16 @@ install_applications () {
     cask_install "sublime-text"
     cask_install "the-unarchiver"
     cask_install "transmission"
+    cask_install "tweeten"
+    cask_install "vlc"
     cask_install "vscodium"
 
-    mas_install "1284863847" # Unsplash Wallpapers
-    mas_install "1287445660" # Agenda.
-    mas_install "442160987" # FlyCut
-    mas_install "441258766" # Magnet
+    mas_install "1287445660"  # Agenda.
+    mas_install "442160987"   # FlyCut
+    mas_install "441258766"   # Magnet
+    mas_install "1449412482"  # Reeder
+    mas_install "1006087419"  # SnippetsLab
+    mas_install "1284863847"  # Unsplash Wallpapers
 
     log_empty_line
 }
