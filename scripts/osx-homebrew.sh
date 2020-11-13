@@ -7,7 +7,7 @@ export HOMEBREW_CASK_OPTS="--appdir=~/Applications --fontdir=/Library/Fonts"
 
 install_homebrew () {
     if ! command -v "brew" ; then
-        printf "\n" | /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" &> /dev/null
+        printf "\n" | /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)" &> /dev/null
         #  └─ simulate the ENTER keypress
         log_exit $? "Homebrew"
     else
