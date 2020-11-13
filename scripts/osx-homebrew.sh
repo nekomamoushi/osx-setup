@@ -28,9 +28,6 @@ install_taps () {
 }
 
 install_packages () {
-    brew_install "bash"
-    brew_install "bash-completion@2"
-    brew_install "bash-git-prompt"
     brew_install "diff-so-fancy"
     brew_install "exa"
     brew_install "fzf"
@@ -38,10 +35,9 @@ install_packages () {
     brew_install "git-standup"
     brew_install "htop"
     brew_install "mas"
-    brew_install "nvm"
+    brew_install "n"
     brew_install "python@3"
     brew_install "pipenv"
-    brew_install "pyenv"
     brew_install "the_silver_searcher"
     brew_install "tldr"
     brew_install "wget"
@@ -52,21 +48,14 @@ install_packages () {
 
 install_applications () {
     cask_install "1password" "--appdir=/Applications --no-quarantine"
-    cask_install "adoptopenjdk8"
-    cask_install "android-studio"
-    cask_install "android-platform-tools"
-    cask_install "android-sdk"
     cask_install "appcleaner"
-    cask_install "docker"
     cask_install "dropbox" "--appdir=/Applications"
-    cask_install "evernote"
     cask_install "firefox" "--appdir=/Applications"
     cask_install "font-hack-nerd-font"
     cask_install "font-iosevka"
     cask_install "iina"
     cask_install "iterm2"
     cask_install "google-chrome" "--appdir=/Applications"
-    cask_install "lepton"
     cask_install "mark-text"
     cask_install "numi"
     cask_install "postman"
@@ -82,7 +71,7 @@ install_applications () {
     cask_install "transmission"
     cask_install "tweeten"
     cask_install "vlc"
-    cask_install "vscodium"
+    cask_install "visual-studio-code"
 
     mas_install "1287445660"  # Agenda.
     mas_install "442160987"   # FlyCut
