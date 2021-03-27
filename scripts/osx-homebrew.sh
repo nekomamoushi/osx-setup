@@ -55,6 +55,7 @@ install_applications () {
     cask_install "font-iosevka"
     cask_install "iina"
     cask_install "iterm2"
+    cask_install "font-jetbrains-mono"
     cask_install "google-chrome" "--appdir=/Applications"
     cask_install "mark-text"
     cask_install "numi"
