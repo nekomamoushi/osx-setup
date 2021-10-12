@@ -60,6 +60,7 @@ install_applications () {
     cask_install "font-iosevka"
     cask_install "font-jetbrains-mono"
     cask_install "github"
+    cask_install "hiddenbar" # https://github.com/dwarvesf/hidden
     cask_install "iina"
     cask_install "iterm2"
     cask_install "google-chrome" "--appdir=/Applications"
