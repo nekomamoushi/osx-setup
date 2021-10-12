@@ -56,7 +56,7 @@ set_common_prefs () {
 
 set_finder_prefs () {
     # Finder: show hidden files by default
-    defaults write com.apple.Finder AppleShowAllFiles -bool false
+    defaults write com.apple.Finder AppleShowAllFiles -bool false # Default
 
     # Finder: show all filename extensions
     defaults write NSGlobalDomain AppleShowAllExtensions -bool true
@@ -104,6 +104,15 @@ set_finder_prefs () {
     # Show icons for hard drives, servers, and removable media on the desktop
     defaults write com.apple.finder ShowExternalHardDrivesOnDesktop -bool true
     defaults write com.apple.finder ShowRemovableMediaOnDesktop -bool true
+    defaults write com.apple.finder ShowMountedServersOnDesktop -bool false # Default
+
+    # Disable Creation of Metadata Files on Network Volumes
+    # Avoids creation of .DS_Store and AppleDouble files.
+    defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
+
+    # Disable Creation of Metadata Files on USB Volumes
+    # Avoids creation of .DS_Store and AppleDouble files.
+    defaults write com.apple.desktopservices DSDontWriteUSBStores -bool true
 
     log_success "Finder Preferences"
 }
@@ -116,7 +125,7 @@ set_dock_prefs() {
     defaults write com.apple.dock autohide -bool false
 
     # Minimize windows into their application’s icon
-    defaults write com.apple.dock minimize-to-application -bool false
+    defaults write com.apple.dock minimize-to-application -bool true
 
     # Enable spring loading for all Dock items
     defaults write com.apple.dock enable-spring-load-actions-on-all-items -bool true
@@ -127,8 +136,9 @@ set_dock_prefs() {
     # Don’t animate opening applications from the Dock
     defaults write com.apple.dock launchanim -bool false
 
+    ## Obsolete since macOS 10.14 (Mojave).
     # Create recent items stack
-    defaults write com.apple.dock persistent-others -array-add '{"tile-data" = {"list-type" = 1;}; "tile-type" = "recents-tile";}'
+    # defaults write com.apple.dock persistent-others -array-add '{"tile-data" = {"list-type" = 1;}; "tile-type" = "recents-tile";}'
 
     ## Set hotcorner actions.  Disable "Disable Screen Saver" when found.
     ## The following are the values of each option in the GUI
