@@ -58,6 +58,7 @@ install_applications () {
     cask_install "font-jetbrains-mono"
     cask_install "google-chrome" "--appdir=/Applications"
     cask_install "mark-text"
+    cask_install "netnewswire"
     cask_install "numi"
     cask_install "postman"
     cask_install "qlcolorcode"
@@ -77,7 +78,6 @@ install_applications () {
     mas_install "1287445660"  # Agenda.
     mas_install "442160987"   # FlyCut
     mas_install "441258766"   # Magnet
-    mas_install "1449412482"  # Reeder
     mas_install "1006087419"  # SnippetsLab
     mas_install "1284863847"  # Unsplash Wallpapers
 
